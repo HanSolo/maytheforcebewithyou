@@ -1,0 +1,318 @@
+
+/* General style definitions */
+.root * {
+    /* COLOR DEFINITIONS */
+    -BLUE-AQUA                        : rgb(0, 122, 255);
+    -BLUE-DARK                        : rgb(10, 132, 255);
+    -BROWN-AQUA                       : rgb(162, 132, 94);
+    -BROWN-DARK                       : rgb(172, 142, 104);
+    -GRAY-AQUA                        : rgb(142, 142, 147);
+    -GRAY-DARK                        : rgb(152, 152, 157);
+    -GREEN-AQUA                       : rgb(40, 205, 65);
+    -GREEN-DARK                       : rgb(50, 215, 75);
+    -INIDIGO-AQUA                     : rgb(88, 86, 214);
+    -INDIGO-DARK                      : rgb(94, 92, 230);
+    -ORANGE-AQUA                      : rgb(255, 149, 0);
+    -ORANGE-DARK                      : rgb(255, 159, 0);
+    -PINK-AQUA                        : rgb(255, 45, 85);
+    -PINK-DARK                        : rgb(255, 55, 95);
+    -PURPLE-AQUA                      : rgb(175, 82, 222);
+    -PURPLE-DARK                      : rgb(191, 90, 242);
+    -RED-AQUA                         : rgb(255, 59, 48);
+    -RED-DARK                         : rgb(255, 69, 58);
+    -TEAL-AQUA                        : rgb(85, 190, 240);
+    -TEAL-DARK                        : rgb(90, 200, 245);
+    -YELLOW-AQUA                      : rgb(255, 204, 0);
+    -YELLOW-DARK                      : rgb(255, 214, 10);
+    -BACKGROUND-AQUA                  : rgb(255, 255, 255);
+    -BACKGROUND-DARK                  : rgb(32, 32, 34);
+    -TEXT-AQUA                        : rgb(0, 0, 0);
+    -TEXT-DARK                        : rgb(255, 255, 255);
+    -TEXT-SELECTED-AQUA               : rgb(255, 255, 255);
+    -TEXT-SELECTED-DARK               : rgb(255, 255, 255);
+    -PANE-BACKGROUND-AQUA             : rgb(226, 227, 229);
+    -PANE-BACKGROUND-DARK             : rgb(50, 58, 68);
+    -CONTROL-BACKGROUND-AQUA          : rgb(246, 246, 246);
+    -CONTROL-BACKGROUND-DARK          : rgb(105, 106, 109);
+    -CONTROL-BORDER-AQUA              : rgb(230, 230, 230);
+    -CONTROL-BORDER-DARK              : rgb(93, 95, 98);
+    -CONTROL-SELECTED-BACKGROUND-AQUA : rgb(106, 106, 106);
+    -CONTROL-SELECTED-BACKGROUND-DARK : rgb(199, 200, 203);
+    -HEADER-BACKGROUND                : rgb(240, 237, 237);
+    -HEADER-BACKGROUND-DARK           : rgb(47, 46, 47);
+    -HEADER-STD-HEIGHT                : 26.25;
+    -HEADER-DOUBLE-HEIGHT             : 52.5;
+
+    /* VARIABLE DEFINITIONS */
+    -accent-color                 : -BLUE-AQUA;
+    -background-color             : -BACKGROUND-AQUA;
+    -pane-background-color        : -PANE-BACKGROUND-AQUA;
+    -text-color                   : -TEXT-AQUA;
+    -text-selected-color          : -TEXT-SELECTED-AQUA;
+    -control-background-color     : -CONTROL-BACKGROUND-AQUA;
+    -control-border-color         : -CONTROL-BORDER-AQUA;
+
+    -accent-color-dark            : -BLUE-DARK;
+    -background-color-dark        : -BACKGROUND-DARK;
+    -pane-background-color-dark   : -PANE-BACKGROUND-DARK;
+    -text-color-dark              : -TEXT-DARK;
+    -text-selected-color-dark     : -TEXT-SELECTED-DARK;
+    -control-background-color-dark: -CONTROL-BACKGROUND-DARK;
+    -control-border-color-dark    : -CONTROL-BORDER-DARK;
+
+    -header-height                : -HEADER-STD-HEIGHT;
+}
+
+
+/* StackPane */
+.stack-pane {
+    -fx-background-color: rgb(226, 227, 229);
+}
+.stack-pane:dark {
+    -fx-background-color: rgb(50, 58, 68);
+}
+
+
+/* Button */
+.demo-button,
+.demo-button:focused {
+    -fx-padding          : 4 8 4 8;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 5, 5;
+    -fx-background-color : -control-border-color, -control-background-color;
+    -fx-border-insets    : 0;
+    -fx-border-style     : none;
+    -fx-border-radius    : 5;
+    -fx-border-width     : 0;
+    -fx-border-color     : transparent;
+    -fx-text-fill        : -text-color;
+    -fx-alignment        : CENTER_LEFT;
+    -fx-focus-color      : transparent;
+    -fx-effect           : innershadow( two-pass-box , rgba(0,0,0,0.6) , 4, 0.0 , 0 , 0 );
+}
+.demo-button:hover {
+    -fx-background-color : derive(-control-background-color, 40%);
+}
+.demo-button:armed {
+    -fx-background-color : -accent-color;
+    -control-border-color: derive(-accent-color, -20%);
+    -fx-text-fill        : -text-selected-color;
+}
+
+.demo-button:dark,
+.demo-button:dark:focused {
+    -fx-padding          : 4 8 4 8;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 5, 5;
+    -fx-background-color : -control-border-color-dark, -control-background-color-dark;
+    -fx-border-insets    : 0;
+    -fx-border-style     : none;
+    -fx-border-radius    : 0;
+    -fx-border-width     : 0;
+    -fx-border-color     : transparent;
+    -fx-text-fill        : -text-color-dark;
+    -fx-alignment        : CENTER_LEFT;
+    -fx-focus-color      : transparent;
+    -fx-effect           : innershadow( two-pass-box , rgba(255,255,255,0.6) , 4, 0.0 , 0 , 0 );
+}
+.demo-button:dark:hover {
+    -fx-background-color : derive(-control-background-color-dark, 40%);
+}
+.demo-button:dark:armed {
+    -fx-background-color      : -accent-color-dark;
+    -control-border-color-dark: derive(-accent-color-dark, -20%);
+    -fx-text-fill             : -text-selected-color-dark;
+}
+
+
+/* CheckBox */
+.demo-check-box {
+    -fx-label-padding: 0 0 0 5;
+    -fx-text-fill    : -text-color;
+}
+.demo-check-box > .box {
+    -fx-border-insets    : 0;
+    -fx-border-width     : 1;
+    -fx-border-style     : solid;
+    -fx-border-radius    : 3;
+    -fx-border-color     : -GRAY-AQUA;
+    -fx-background-radius: 3;
+    -fx-background-color : transparent;
+    -fx-padding          : 2 2 3 3;
+}
+.demo-check-box > .box > .mark {
+    -fx-background-color: null;
+    -fx-padding         : 4 4 4 4;
+    -fx-shape           : "M-0.25,6.083c0.843-0.758,4.583,4.833,5.75,4.833S14.5-1.5,15.917-0.917c1.292,0.532-8.75,17.083-10.5,17.083C3,16.167-1.083,6.833-0.25,6.083z";
+}
+.demo-check-box:selected > .box {
+    -fx-border-color    : transparent;
+    -fx-background-color: -accent-color;
+}
+.demo-check-box:selected > .box > .mark {
+    -fx-background-color: -TEXT-SELECTED-AQUA;
+    -fx-padding         : 4 4 4 4;
+    -fx-shape           : "M23.895,35.297L31.077,24.09C31.818,22.935 33.357,22.598 34.512,23.338C35.668,24.079 36.005,25.618 35.264,26.773L26.297,40.767C25.8,41.542 24.944,41.949 24.085,41.909C23.383,41.902 22.689,41.6 22.203,41.02L16.809,34.583C15.927,33.532 16.066,31.962 17.118,31.081C18.169,30.199 19.739,30.337 20.62,31.389L23.895,35.297Z";
+}
+.demo-check-box:indeterminate > .box {
+    -fx-border-color    : transparent;
+    -fx-background-color: -accent-color;
+}
+.demo-check-box:indeterminate  > .box > .mark {
+    -fx-background-color: -TEXT-SELECTED-AQUA;
+    -fx-shape           : "M0,-0.5H7V1.5H0Z";
+    -fx-scale-shape     : false;
+    -fx-padding         : 4 4 4 4;
+}
+
+.demo-check-box:dark {
+    -fx-label-padding: 0 0 0 5;
+    -fx-text-fill    : -text-color-dark;
+}
+.demo-check-box:dark > .box {
+    -fx-border-insets    : 0;
+    -fx-border-width     : 0;
+    -fx-border-style     : none;
+    -fx-border-radius    : 3;
+    -fx-border-color     : transparent;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 3, 3;
+    -fx-background-color : linear-gradient(to bottom, rgb(103, 99, 99) 0%, rgb(57, 51, 52) 3%, rgb(57, 51, 52) 97%, rgb(111, 106, 107) 100%),
+                           linear-gradient(to bottom, rgb(82, 76, 76) 0%, rgb(109, 105, 105) 100%);
+    -fx-padding          : 2 2 3 3;
+}
+.demo-check-box:dark > .box > .mark {
+    -fx-background-color: null;
+    -fx-padding         : 5 5 5 5;
+    -fx-shape           : "M-0.25,6.083c0.843-0.758,4.583,4.833,5.75,4.833S14.5-1.5,15.917-0.917c1.292,0.532-8.75,17.083-10.5,17.083C3,16.167-1.083,6.833-0.25,6.083z";
+}
+.demo-check-box:dark:selected > .box {
+    -fx-background-color: linear-gradient(to bottom, rgb(103, 99, 99) 0%, rgb(57, 51, 52) 3%, rgb(57, 51, 52) 97%, rgb(111, 106, 107) 100%),
+                          linear-gradient(to bottom, rgb(82, 76, 76) 0%, rgb(109, 105, 105) 100%);
+    -fx-padding         : 3 3 4 4;
+}
+.demo-check-box:dark:selected:focused > .box {
+    -fx-background-color: -accent-color-dark;
+}
+.demo-check-box:dark:selected > .box > .mark {
+    -fx-background-insets: 0, 0;
+    -fx-background-color : transparent, -text-color-dark;
+    -fx-padding          : 4 4 4 4;
+    -fx-shape            : "M23.895,35.297L31.077,24.09C31.818,22.935 33.357,22.598 34.512,23.338C35.668,24.079 36.005,25.618 35.264,26.773L26.297,40.767C25.8,41.542 24.944,41.949 24.085,41.909C23.383,41.902 22.689,41.6 22.203,41.02L16.809,34.583C15.927,33.532 16.066,31.962 17.118,31.081C18.169,30.199 19.739,30.337 20.62,31.389L23.895,35.297Z";
+}
+.demo-check-box:dark:indeterminate > .box {
+    -fx-border-color    : transparent;
+    -fx-background-color: -accent-color-dark;
+}
+.demo-check-box:dark:indeterminate:focused > .box {
+    -fx-border-color    : transparent;
+    -fx-background-color: -accent-color-dark;
+}
+.demo-check-box:dark:indeterminate  > .box > .mark {
+    -fx-background-color: -TEXT-SELECTED-DARK;
+    -fx-shape           : "M0,-0.5H7V1.5H0Z";
+    -fx-scale-shape     : false;
+    -fx-padding         : 5 5 5 5;
+}
+
+
+/* TextField */
+.demo-text-field {
+    -fx-control-inner-background: white;
+    -fx-focus-color             : -accent-color;
+    -fx-text-fill               : black;
+    -fx-highlight-fill          : derive(-fx-control-inner-background,-20%);
+    -fx-highlight-text-fill     : -fx-text-inner-color;
+    -fx-prompt-text-fill        : derive(-fx-control-inner-background,-30%);
+    -fx-background-color        : linear-gradient(to bottom, rgb(255, 246, 245) 0%, rgb(220, 220, 220) 99%, rgb(224, 223, 223) 100%), -fx-control-inner-background;
+    -fx-background-insets       : 0, 1 1 2 1;
+    -fx-background-radius       : 0, 0;
+    -fx-cursor                  : text;
+    -fx-padding                 : 0.333333em 0.583em 0.333333em 0.583em; /* 4 7 4 7 */
+}
+.demo-text-field:focused {
+    -fx-highlight-fill     : -accent-color;
+    -fx-highlight-text-fill: white;
+    -fx-background-color   : -fx-focus-color,
+    -fx-control-inner-background,
+    -fx-faint-focus-color,
+    linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+    -fx-background-insets  : -0.2, 1, -1.4, 3;
+    -fx-background-radius  : 0, 0, 0;
+    -fx-prompt-text-fill   : transparent;
+}
+
+.demo-text-field:dark {
+    -fx-control-inner-background: -control-background-color-dark;
+    -fx-text-fill               : -text-color-dark;
+    -fx-highlight-fill          : derive(-fx-control-inner-background,+20%);
+    -fx-highlight-text-fill     : -fx-text-inner-color;
+    -fx-prompt-text-fill        : derive(-fx-control-inner-background,+30%);
+    -fx-background-color        : linear-gradient(to bottom, rgb(47, 45, 44) 0%, rgb(41, 38, 37) 1%, rgb(55, 52, 21) 99%, rgb(61, 61, 61) 100%), -fx-control-inner-background;
+    -fx-background-insets       : 0, 2 1 2 1;
+    -fx-background-radius       : 0, 0;
+    -fx-cursor                  : text;
+    -fx-padding                 : 0.333333em 0.583em 0.333333em 0.583em; /* 4 7 4 7 */
+}
+.demo-text-field:dark:focused {
+    -fx-highlight-fill     : -accent-color;
+    -fx-highlight-text-fill: -text-color-dark;
+    -fx-background-color   : -fx-focus-color, -fx-control-inner-background, -fx-faint-focus-color,
+    linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+    -fx-background-insets  : -0.2, 1, -1.4, 3;
+    -fx-background-radius  : 3, 2, 4, 0;
+    -fx-prompt-text-fill   : transparent;
+}
+
+
+/* Header */
+.header {
+    -fx-min-height       : -header-height;
+    -fx-max-height       : -header-height;
+    -fx-pref-height      : -header-height;
+    -fx-background-insets: 0 0 0 0, 0.5 0.5 0 0.5, 1 1 0 1, 1.5 1 0 1;
+    -fx-background-radius: 10 10 0 0, 9.5 9.5 0 0, 9.5 9.5 0 0, 8.5 8.5 0 0 ;
+    -fx-background-color : rgb(200, 200, 200), rgb(236, 234, 234), rgb(245, 244, 244), -HEADER-BACKGROUND;
+    -fx-effect           : dropshadow(gaussian, rgba(0,0,0,0.35), 1, 0, 0, 1.5);
+}
+.header:window-focus-lost {
+    -fx-background-color : rgb(229, 229, 229), rgb(197, 197, 197), rgb(243, 242, 242), rgb(231, 230, 230);
+}
+.header:dark {
+    -fx-background-color: rgb(2, 2 ,2), linear-gradient(to bottom, rgb(117, 115, 115) 0%, rgb(99, 98, 98) 20%, rgb(99, 98, 98) 100%), rgb(133, 131, 132), -HEADER-BACKGROUND-DARK;
+}
+.header:dark:window-focus-lost {
+    -fx-background-color: rgb(2, 2, 2), rgb(108, 105, 106), rgb(122, 121, 121), rgb(40, 37, 37);
+}
+
+
+/* CircleButton */
+.close {
+    -fx-fill  : rgb(236, 107, 95);
+    -fx-stroke: derive(rgb(236, 107, 95), -10%);
+}
+.minimize {
+    -fx-fill  : rgb(244, 190, 79);
+    -fx-stroke: derive(rgb(244, 190, 79), -10%);
+}
+.maximize {
+    -fx-fill  : rgb(38, 193, 56);
+    -fx-stroke: derive(rgb(38, 193, 56), -10%);
+}
+.close:disabled,
+.minimize:disabled,
+.maximize:disabled {
+    -fx-fill  : rgb(91, 87, 87);
+    -fx-stroke: derive(rgb(91, 87, 87), -10%);
+}
+
+
+/* Body */
+.body {
+    -fx-background-insets: 0 0 0 0, 0 0.5 0.5 0.5, 0 1 1 1;
+    -fx-background-radius: 0 0 10 10, 0 0 9.5 9.5, 0 0 9.5 9.5;
+    -fx-background-color : rgba(2, 2, 2, 0.1), rgb(238, 236, 236), rgb(235, 233, 233);
+}
+.body:dark {
+    -fx-background-color: rgb(2, 2, 2), rgb(84, 82, 81), rgb(32, 28, 28);
+}

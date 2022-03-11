@@ -1,0 +1,44 @@
+.root * {
+    BUTTON-COLOR         : rgb(51, 101, 207);
+    SELECTED-BUTTON-COLOR: derive(BUTTON-COLOR, 10%);
+}
+
+.arrow-button {
+    -fx-min-width        : 16px;
+    -fx-min-height       : 16px;
+    -fx-max-width        : 16px;
+    -fx-max-height       : 16px;
+    -fx-pref-width       : 16px;
+    -fx-pref-height      : 16px;
+    -fx-padding          : 2.5px 4.5px 2.5px 4.5px;
+    -fx-background-insets: 0px, 0.5px;
+    -fx-background-color : linear-gradient(to bottom, derive(BUTTON-COLOR, 20%) 0%, BUTTON-COLOR 20%, BUTTON-COLOR 100%), BUTTON-COLOR;
+    -fx-background-radius: 3.25px, 2.85px;
+    -fx-effect           : dropshadow(two-pass-box, rgba(0, 0, 0, 0.65), 1, 0.0, 0, 0.5);
+}
+.arrow-button > .arrows {
+    -fx-background-insets: 0;
+    -fx-background-color : white;
+    -fx-position-shape   : true;
+    -fx-scale-shape      : false;
+    -fx-shape            : "M8.047,11.395L10.079,9.363C10.42,9.022 10.974,9.022 11.316,9.363C11.657,9.704 11.657,10.258 11.316,10.6L8.666,13.25C8.496,13.42 8.273,13.506 8.05,13.506L8.045,13.506C7.822,13.506 7.599,13.42 7.429,13.25L4.779,10.6C4.438,10.258 4.438,9.704 4.779,9.363C5.12,9.022 5.674,9.022 6.016,9.363L8.047,11.395ZM8.002,2.525L7.998,2.525C7.775,2.526 7.552,2.611 7.382,2.781L4.732,5.431C4.39,5.773 4.39,6.327 4.732,6.668C5.073,7.01 5.627,7.01 5.968,6.668L8,4.636L10.032,6.668C10.373,7.01 10.927,7.01 11.268,6.668C11.61,6.327 11.61,5.773 11.268,5.431L8.618,2.781C8.448,2.611 8.225,2.526 8.002,2.525Z";
+}
+.arrow-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, derive(SELECTED-BUTTON-COLOR, 20%) 0%, SELECTED-BUTTON-COLOR 20%, SELECTED-BUTTON-COLOR 100%), SELECTED-BUTTON-COLOR;
+}
+
+.box-label {
+    -fx-pref-width: 80;
+    -fx-max-width : -1;
+    -fx-text-fill : white;
+}
+
+.button-box {
+    -fx-min-width        : 116px;
+    -fx-min-height       : 20px;
+    -fx-max-height       : 20px;
+    -fx-pref-height      : 20px;
+    -fx-background-insets: 0, 0.5;
+    -fx-background-radius: 4.75px, 4.5px;
+    -fx-background-color : linear-gradient(to bottom, rgb(125, 123, 122) 0%, rgb(93, 89, 90) 20%, rgb(93, 89, 90) 100%), rgb(93, 89, 90);
+}

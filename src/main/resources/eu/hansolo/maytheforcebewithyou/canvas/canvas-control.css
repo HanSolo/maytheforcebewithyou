@@ -1,0 +1,8 @@
+.canvas-control {
+    -color-one: green;
+    -color-two: blue;
+}
+.canvas-control:on {
+    -color-one: lime;
+    -color-two: cyan;
+}

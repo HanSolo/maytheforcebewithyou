@@ -1,0 +1,6 @@
+.canvas-control {
+    -color-one: orange;
+}
+.canvas-control:on {
+    -color-one: red;
+}
